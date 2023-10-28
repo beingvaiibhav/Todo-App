@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO APP</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        font-family: 'Poppins', sans-serif;
+    }
+    .container{
+        width: 100vw;
+        height: 100vh;
+        background-color: purple;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .todo-container{
+        width: 40%;
+        background-color: white;
+        border-radius: 25px;
+    }
+    .heading{
+        color: purple;
+        font-weight: bold;
+        padding: 10px;
+    }
+    .search-bar{
+        height: 50px;
+        width: 99%;
+        border-radius: 25px;
+        background-color: #EBECF0;
+        display: flex;
+        justify-content: space-between;
+        overflow: hidden;
+    }
+    .add-task{
+        text-align: center;
+        border: none;
+        width: 85%;
+        background-color: #EBECF0;
+        cursor: pointer;
+                
+    }
+    .add-button{
+        background-color: orange;
+        width: 15%;
+        height: 50px;
+        border-radius: 25px;
+        border: none;
+        cursor: pointer;
+    }
+    .todo-list{
+        width: 99%;
+        border-radius: 25px;
+        background-color: aqua;
+        margin-top: 20px;
+    }
+    .items{
+        font-size: 20px;
+                    padding: 15px;
+                    margin-top: 5px;
+                    list-style: none;
+    }
+    @media only screen and (max-width:480px) {
+        .todo-container{
+        width: 100%;
+        height: 100%;
+        border-radius: 0px;
+        
+      
+        }
+    }
+</style>
+<body class="container">
+    <div class="todo-container">
+        <div style="
+            margin: 30px;
+            
+            ">
+            <h1 class="heading">TODO APP📃</h1>
+            <div class="search-bar">
+                <input class="add-task" type="text" placeholder="Add Your Task"/>
+                <button class="add-button">ADD</button>
+                
+            </div>
+
+          <!--TODO ITEMS START  -->
+            <div class="todo-list">
+                <ul class="items">
+                    <li>   
+                        <div style="display: flex;justify-content: space-between;">
+                            <div style="display: flex;">
+                            <p style="font-weight: bold;">Task 1</p>
+                            <p style="font-size: 10px; color: gray; margin-top: 8px; margin-left: 10px;">28/10/2023</p>
+                            </div> 
+                            <div style="display: flex;">
+                            <p style="margin-left: 10px; cursor: pointer;">📝</p>
+                            <p style="cursor: pointer;">🗑️</p>
+                            </div>
+                        </div>
+                        
+                        <p style="font-size: 15px;">Description</p>
+                    </li>
+                    
+                
+                   
+
+                </ul>
+            </div>
+           
+            
+            
+        </div>
+    </div>
+    
+
+    <script defer src="app.js"></script>
+</body>
+</html>
