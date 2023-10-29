@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TODO APP</title>
+    <link rel="icon" type="image/x-icon" href="/images/to-do-list.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
@@ -22,14 +23,15 @@
         justify-content: center;
         align-items: center;
     }
-    .todo-container{
+    .todo-containerr{
         width: 40%;
         background-color: white;
         border-radius: 25px;
     }
     .heading{
         color: purple;
-        font-weight: bold;
+        font-size: 30px;
+        font-weight: bolder;
         padding: 10px;
     }
     .search-bar{
@@ -39,7 +41,9 @@
         background-color: #EBECF0;
         display: flex;
         justify-content: space-between;
+        margin-top: 10px;
         overflow: hidden;
+       
     }
     .add-task{
         text-align: center;
@@ -47,6 +51,7 @@
         width: 85%;
         background-color: #EBECF0;
         cursor: pointer;
+      
                 
     }
     .add-button{
@@ -56,65 +61,169 @@
         border-radius: 25px;
         border: none;
         cursor: pointer;
+        
     }
     .todo-list{
         width: 99%;
         border-radius: 25px;
         background-color: aqua;
         margin-top: 20px;
+        
     }
     .items{
         font-size: 20px;
-                    padding: 15px;
-                    margin-top: 5px;
-                    list-style: none;
+        padding: 15px;
+        margin-top: 5px;
+        list-style: none;
+        background-color: aqua;
     }
+  
+    .main-container{
+        margin: 0;
+        /* visibility: hidden;
+        position: absolute; */
+       
+    }
+    .add-new-task{
+        position: relative;
+        visibility: hidden;
+        display: flex;
+        flex-direction: column;
+        margin: 10px;
+       
+        
+    }
+    .add-new-task label{
+        font-size: 20px;
+        font-weight: bold;
+        margin-top: 20px;
+    }
+    .add-new-task input {
+        height: 50px;
+        border-radius: 25px;
+        text-align: center;
+        background-color: aliceblue;
+        border: none;
+        margin-top: 5px;
+    }
+    .add-new-task textarea{
+        padding: 5px;
+        border-radius: 25px;
+        text-align: center;
+        background-color: aliceblue;
+        border: none;
+    }
+    .button-todo{
+        display: flex;
+        justify-content: center;
+    }
+    .button-todo button {
+        width: 80px;
+        height: 45px;
+        border-radius: 25px;
+        border: none;
+        background-color: orange;
+        color: white;
+        margin: 30px;
+        font-size: 15px;
+        font-weight: 300;
+        cursor: pointer;
+    }
+    .todo-container{
+        display: flex;
+        justify-content: space-between;
+
+        
+    }
+    .text-container{
+        display: flex;
+        background-color: aqua;
+    }
+    .x-text{
+        font-weight: bold;
+        
+    }
+    .x-data{
+        font-size: 10px; 
+        color: gray; 
+        margin-top: 8px; 
+        margin-left: 10px;
+    }
+    .edit-container{
+        display: flex;
+        background-color: aqua;
+
+        
+    }
+    .edit-container p{
+        margin-left: 5px; 
+        cursor: pointer;
+    }
+  
     @media only screen and (max-width:480px) {
-        .todo-container{
+        .todo-containerr{
         width: 100%;
         height: 100%;
         border-radius: 0px;
         
       
         }
+        .add-task{
+            width: 80%;
+        }
+        .add-button{
+            width: 20%;
+        }
+        .add-new-task{
+            margin: 10px;
+        }
+        .add-new-task label{
+            margin-top: 20px;
+        }
+        .add-new-task input{
+            margin-top: 5px;
+        }
     }
 </style>
 <body class="container">
-    <div class="todo-container">
+    <div class="todo-containerr">
         <div style="
             margin: 30px;
             
             ">
-            <h1 class="heading">TODO APP📃</h1>
+            <span class="heading">TODO APP📃</span>
+           
+            <div class="main-container">
             <div class="search-bar">
-                <input class="add-task" type="text" placeholder="Add Your Task"/>
-                <button class="add-button">ADD</button>
+                <input onClick="openTodoMenu()" class="add-task" type="text" placeholder="Add Your Task"/>
+                <button onClick="openTodoMenu()" class="add-button">ADD</button>
                 
             </div>
+           
 
           <!--TODO ITEMS START  -->
             <div class="todo-list">
-                <ul class="items">
-                    <li>   
-                        <div style="display: flex;justify-content: space-between;">
-                            <div style="display: flex;">
-                            <p style="font-weight: bold;">Task 1</p>
-                            <p style="font-size: 10px; color: gray; margin-top: 8px; margin-left: 10px;">28/10/2023</p>
-                            </div> 
-                            <div style="display: flex;">
-                            <p style="margin-left: 10px; cursor: pointer;">📝</p>
-                            <p style="cursor: pointer;">🗑️</p>
-                            </div>
-                        </div>
-                        
-                        <p style="font-size: 15px;">Description</p>
-                    </li>
-                    
                 
-                   
-
-                </ul>
             </div>
+
+            </div>
+
+             <div class="add-new-task">
+                <label>Add Task</label>
+                <input class="task-field" type="text" placeholder="ADD TASK"/>
+                <p class="text-warning" style="font-size: 10px; color: red; margin-left: 10px; margin-top: 5px;"></p>
+                <label>Due Date</label>
+                <input class="date-field" type="date"/>
+                <label>Description</label>
+                <textarea class="desc-field" placeholder="Description"></textarea>
+                <span class="button-todo">
+                    <button onClick="closeButton()">Close</button>
+                    <button onClick="submitBotton()">ADD</button>
+                </span>
+                
+
+            </div>
+  
            
             
             
